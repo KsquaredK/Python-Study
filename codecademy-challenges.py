@@ -1,3 +1,5 @@
+# PYTHON CHALLENGES
+
 # ASCII Art: my initials
 
 top_bottom_k = "K   K"
@@ -78,3 +80,85 @@ elif planet == 5:
   print("On Uranus, Codey weighs " + str(weight * .92))
 else:
   print("On Neptune, Codey weighs " + str(weight * 1.19))
+
+
+  # Magic 8-Ball (elif)
+
+  import random
+
+name = "Phineas Fogg"
+question = "Is it time yet?"
+answer = ""
+random_number = random.randint(1,14)
+# print(str(random_number))
+
+if random_number == 1:
+  answer = "Yes, definitely."
+elif random_number == 2:
+  answer = "It is decidely so."
+elif random_number == 3:
+  answer = "Without a doubt."
+elif random_number == 4:
+  answer = "Reply hazy, try again."
+elif random_number == 5:
+  answer = "Ask again later."
+elif random_number == 6:
+  answer = "Better not tell you now."
+elif random_number == 7:
+  answer = "My sources say no."
+elif random_number == 8:
+  answer = "Outlook not so good."
+elif random_number == 9:
+  answer = "The oracle is amused by your presumption, impudent one."
+elif random_number == 10:
+  answer = "I'm going to need more coffee."
+elif random_number == 11:
+  answer = "Jump on it, Jack."
+elif random_number == 12:
+  answer = "Dream on, dreamer."
+elif random_number == 13:
+  answer = "For you? But of course."
+else:
+  answer = "Error - out of range."
+
+if question == "":
+  print("You did not ask a question, which tears at the fabric of reality!")
+elif name == "" and question != "":
+  print("Question: " + str(question) + "\nMagic 8-Ball's answer is: " + answer)
+else:
+  print(str(name) + " asks: " + str(question) + "\nMagic 8-Ball's answer is: " + answer)
+
+
+
+  # Shipping Cost Calculator
+
+  elif weight <= 10 and weight > 6:weight = 41.5
+cost = 0
+
+#ground shipping premium
+premium_ground_cost = 125
+
+#drone shipping
+drone_cost = 0
+
+#ground shipping
+if weight <= 2:
+  cost = ((1.50 * weight) + 20)
+elif weight <= 6 and weight > 2:
+  cost = ((3 * weight) + 20)
+elif weight <= 10 and weight > 6:
+  cost = ((4 * weight) + 20)
+else:
+  cost = ((4.75 * weight) + 20)
+
+# drone shipping calculation
+if weight <= 2:
+  drone_cost = (4.50 * weight)
+elif weight <= 6 and weight > 2:
+  drone_cost = (9 * weight)
+elif weight <= 10 and weight > 6:
+  drone_cost = (12 * weight)
+else:
+  drone_cost = (14.25 * weight)
+
+print('Ground: ' + str(cost) + ' Premium ground: ' + str(premium_ground_cost) + ' Drone: ' + str(drone_cost))
