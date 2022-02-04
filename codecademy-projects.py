@@ -3,6 +3,7 @@
 # 2. Codey: Space Welterweight - ELIF
 # 3. Magic 8-Ball
 # 4. Shipping Cost Calculator
+# 5. Pizza Shop
 
 
 # ASCII Art: my initials
@@ -19,6 +20,15 @@ print(middle + "     " + middle)
 print(almost_middle + "    " + almost_middle)
 print(almost_top_bottom + "   " + almost_top_bottom)
 print(top_bottom_k + "  "  + top_bottom_k)
+
+# output: 
+# K   K  K   K
+# K  K   K  K
+# K K    K K
+# KK     KK
+# K K    K K
+# K  K   K  K
+# K   K  K   K
 
 
 # Furniture Store  UPDATING VARIABLE VALUES
@@ -166,3 +176,89 @@ else:
   drone_cost = (14.25 * weight)
 
 print('Ground: ' + str(cost) + '\nPremium ground: ' + str(premium_ground_cost) + '\nDrone: ' + str(drone_cost))
+
+
+
+
+# Pizza Shop - modifying lists and 2D lists
+# Your code below:
+toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies", "mushrooms"]
+
+prices = [2,6,1,3,2,7,2]
+
+num_two_dollar_slices = prices.count(2)
+print("Number of $2 slices: " + str(num_two_dollar_slices) + "\n")
+# output: Number of $2 slices: 3
+
+num_pizzas = len(toppings)
+print("We sell " + str(num_pizzas) + " different kinds of pizza! \n")
+# output: We sell 7 different kinds of pizza! 
+
+pizza_and_prices = [[2, "pepperoni"], [6, "pineapple"], [1, "cheese"], [3, "sausage"], [2, "olives"], [7, "anchovies"], [2, "mushrooms"]]
+
+pizza_and_prices.sort()
+print("Sorted pizzas: " + str(pizza_and_prices) + "\n")
+# output: Sorted pizzas: [[1, 'cheese'], [2, 'mushrooms'], [2, 'olives'], [2, 'pepperoni'], [3, 'sausage'], [6, 'pineapple'], [7, 'anchovies']]
+
+
+cheapest_pizza = pizza_and_prices[0]
+print("Cheapest slice: " + str(cheapest_pizza) + "\n")
+# output: Cheapest slice: [1, 'cheese']
+
+priciest_pizza = pizza_and_prices.pop()
+print("Priciest slice: " + str(priciest_pizza) + "\n")
+# output: Priciest slice: [7, 'anchovies']
+
+pizza_and_prices.pop()
+print("Pizza and prices with anchovies gone " + str(pizza_and_prices) + "\n")
+# output:Pizza and prices with anchovies gone [[1, 'cheese'], [2, 'mushrooms'], [2, 'olives'], [2, 'pepperoni'], [3, 'sausage']]
+
+pizza_and_prices.insert(-1, [2.5, "peppers"])
+print("Pizzas and prices with peppers added: " + str(pizza_and_prices) + "\n")
+# output: Pizzas and prices with peppers added: [[1, 'cheese'], [2, 'mushrooms'], [2, 'olives'], [2, 'pepperoni'], [2.5, 'peppers'], [3, 'sausage']]
+
+three_cheapest = pizza_and_prices[0:4]
+print("Three cheapest: " + str(three_cheapest))
+# output: Three cheapest: [[1, 'cheese'], [2, 'mushrooms'], [2, 'olives'], [2, 'pepperoni']]
+
+
+
+# Carly's Clippers - Lists Comprehensions and Loops
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+total_price = 0
+total_revenue = 0
+
+for price in prices:
+  total_price += price
+  
+print(total_price) # output: 255
+
+average_price = total_price / len(prices)
+print("Average Haircut Price: " + str(average_price))
+# output: Average Haircut Price: 31.875
+
+new_prices = [price - 5 for price in prices]
+
+print(new_prices)
+# output: [25, 20, 35, 15, 15, 30, 45, 30]
+
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] * last_week[i]
+
+print("Total Revenue: " + str(total_revenue))
+# output: Total Revenue: 1085
+
+average_daily_revenue = total_revenue / 7
+print(average_daily_revenue) # output: 155.0
+
+cuts_under_30 = [hairstyles[i] for i in range(len(hairstyles)) if prices[i] < 30]
+
+print(cuts_under_30)
+#output: ['pixie', 'crew', 'bowl']
+
+
+
+
