@@ -135,9 +135,8 @@ else:
 
 
 
-  # Shipping Cost Calculator
+# Shipping Cost Calculator
 
-  elif weight <= 10 and weight > 6:weight = 41.5
 cost = 0
 
 #ground shipping premium
@@ -166,4 +165,4 @@ elif weight <= 10 and weight > 6:
 else:
   drone_cost = (14.25 * weight)
 
-print('Ground: ' + str(cost) + ' Premium ground: ' + str(premium_ground_cost) + ' Drone: ' + str(drone_cost))
+print('Ground: ' + str(cost) + '\nPremium ground: ' + str(premium_ground_cost) + '\nDrone: ' + str(drone_cost))
